@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="icon" href="./assets/imgs/logo.svg" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script defer src="./assets/scripts/script.js"></script>
+  </head>
+  <body>
+    <noscript>Please active a Javascrit to app run</noscript>
+    <div id="loading">
+      <div class="animation"></div>
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
+    <div id="introduction">
+      <p>
+        Welcome to Cloolo! To search, type in the input box and then click on
+        the magnifying glass icon (or press enter).
+      </p>
+      <button tabindex="0" id="btnIntroduction">Ok</button>
+    </div>
+    <div class="mar">
+      <div id="notification"></div>
+      <header>
+        <article class="articleLogo">
+          <img src="./assets/imgs/logo.svg" alt="Cloolo" />
+          <h1 class="nameLogo">Cloolo</h1>
+        </article>
+        <article class="searchAndList">
+          <article class="search">
+            <input
+              type="text"
+              class="input"
+              id="input"
+              placeholder="Search a country or city"
+            />
+            <img
+              tabindex="0"
+              id="search"
+              src="./assets/imgs/search.svg"
+              alt="Search"
+            />
+          </article>
+          <div id="list"></div>
+        </article>
+        <article id="currentLocation" class="currentLocation" tabindex="0">
+          <img src="./assets/imgs/marker.svg" alt="Marker Location" />
+          <h2>Current Location</h2>
+        </article>
+      </header>
+      <main class="gridElements">
+        <section class="part1">
+          <article>
+            <h2 tabindex="0" id="celsius" class="celsius actived">°C</h2>
+            <h2 class="now">Now</h2>
+            <h2 tabindex="0" id="fahrenheit" class="fahrenheit">°F</h2>
+          </article>
+          <h1 id="temperature">????</h1>
+          <section>
+            <article>
+              <img src="./assets/imgs/markermap.svg" alt="Marker Map" />
+              <h3 id="localName">??? ????</h3>
+            </article>
+            <article>
+              <img src="./assets/imgs/time.svg" alt="Time" />
+              <h3 id="time">??:??</h3>
+            </article>
+            <article>
+              <img src="./assets/imgs/calender.svg" alt="Calender" />
+              <h3 id="date">????????? ?, ????</h3>
+            </article>
+          </section>
+        </section>
+        <section class="part2">
+          <section>
+            <h2>Humidity</h2>
+            <article>
+              <img src="./assets/imgs/humidity.svg" alt="Humidity" />
+              <h2 id="humidity">???</h2>
+            </article>
+          </section>
+          <section>
+            <h2>Pressure</h2>
+            <article>
+              <img
+                class="big"
+                src="./assets/imgs/pressure.svg"
+                alt="Pressure"
+              />
+              <h2 id="pressure">??????</h2>
+            </article>
+          </section>
+          <section>
+            <h2>Visibility</h2>
+            <article>
+              <img
+                class="big"
+                src="./assets/imgs/visibility.svg"
+                alt="Visibility"
+              />
+              <h2 id="visibility">????</h2>
+            </article>
+          </section>
+          <section>
+            <h2>Feels Like</h2>
+            <article>
+              <img src="./assets/imgs/fells-like.svg" alt="Fells Like" />
+              <h2 id="feels_like">????</h2>
+            </article>
+          </section>
+        </section>
+        <section class="part3">
+          <section class="today" aria-label>
+            <h2 class="title">Today</h2>
+            <section>
+              <img id="iconWeather" src="./assets/imgs/cloud.svg" alt="" />
+              <article class="data">
+                <h1 id="locationAndCountry">?????, ??</h1>
+                <article class="inData">
+                  <h2 id="typeWeather">??????</h2>
+                  <hr class="line" />
+                  <h2 id="day">????????</h2>
+                </article>
+              </article>
+            </section>
+          </section>
+          <section class="__daysForecast">
+            <h2 class="title">6 Days Forecast</h2>
+            <section class="daysForecast">
+              <article class="itemsForecast">
+                <p>????</p>
+                <hr class="line" />
+                <p>????</p>
+                <hr class="line" />
+                <p>???????</p>
+              </article>
+              <article class="itemsForecast">
+                <p>????</p>
+                <hr class="line" />
+                <p>????</p>
+                <hr class="line" />
+                <p>???????</p>
+              </article>
+              <article class="itemsForecast">
+                <p>????</p>
+                <hr class="line" />
+                <p>????</p>
+                <hr class="line" />
+                <p>???????</p>
+              </article>
+              <article class="itemsForecast">
+                <p>????</p>
+                <hr class="line" />
+                <p>????</p>
+                <hr class="line" />
+                <p>???????</p>
+              </article>
+              <article class="itemsForecast">
+                <p>????</p>
+                <hr class="line" />
+                <p>????</p>
+                <hr class="line" />
+                <p>???????</p>
+              </article>
+              <article class="itemsForecast">
+                <p>????</p>
+                <hr class="line" />
+                <p>????</p>
+                <hr class="line" />
+                <p>???????</p>
+              </article>
+            </section>
+          </section>
+          <section class="airQuality">
+            <section class="headerAir">
+              <article>
+                <img class="imgAir" src="./assets/imgs/pressure.svg" alt="" />
+                <h2>Air Quality Index</h2>
+              </article>
+            </section>
+            <section class="contentAir">
+              <article>
+                <h3>PM2.5</h3>
+                <h2 id="pm2_5">????</h2>
+              </article>
+              <article>
+                <h3>SO2</h3>
+                <h2 id="so2">????</h2>
+              </article>
+              <article>
+                <h3>NO2</h3>
+                <h2 id="no2">????</h2>
+              </article>
+              <article>
+                <h3>O3</h3>
+                <h2 id="o3">????</h2>
+              </article>
+            </section>
+          </section>
+          <section class="sun">
+            <h2 class="title">Sunrise & Sunset</h2>
+            <section>
+              <article class="elementsSun">
+                <h3>Sunrise</h3>
+                <article class="details">
+                  <img src="./assets/imgs/sun.svg" alt="" />
+                  <h1 id="sunrise">??:??</h1>
+                </article>
+              </article>
+              <article class="elementsSun">
+                <h3>Sunset</h3>
+                <article class="details">
+                  <img src="./assets/imgs/moon.svg" alt="" />
+                  <h1 id="sunset">??:??</h1>
+                </article>
+              </article>
+            </section>
+          </section>
+        </section>
+        <section class="pt4">
+          <section class="sectionOtherDay">
+            <article class="otherDay">
+              <h3 class="date">??/??</h3>
+              <h3 class="time">????</h3>
+              <img class="icon" src="./assets/imgs/cloud.svg" alt="" />
+              <h3 class="temp">??</h3>
+            </article>
+            <article class="otherDay">
+              <h3 class="date">??/??</h3>
+              <h3 class="time">????</h3>
+              <img class="icon" src="./assets/imgs/cloud.svg" alt="" />
+              <h3 class="temp">??</h3>
+            </article>
+            <article class="otherDay">
+              <h3 class="date">??/??</h3>
+              <h3 class="time">????</h3>
+              <img class="icon" src="./assets/imgs/cloud.svg" alt="" />
+              <h3 class="temp">??</h3>
+            </article>
+            <article class="otherDay">
+              <h3 class="date">??/??</h3>
+              <h3 class="time">????</h3>
+              <img class="icon" src="./assets/imgs/cloud.svg" alt="" />
+              <h3 class="temp">??</h3>
+            </article>
+            <article class="otherDay">
+              <h3 class="date">??/??</h3>
+              <h3 class="time">????</h3>
+              <img class="icon" src="./assets/imgs/cloud.svg" alt="" />
+              <h3 class="temp">??</h3>
+            </article>
+            <article class="otherDay">
+              <h3 class="date">??/??</h3>
+              <h3 class="time">????</h3>
+              <img class="icon" src="./assets/imgs/cloud.svg" alt="" />
+              <h3 class="temp">??</h3>
+            </article>
+            <article class="otherDay">
+              <h3 class="date">??/??</h3>
+              <h3 class="time">????</h3>
+              <img class="icon" src="./assets/imgs/cloud.svg" alt="" />
+              <h3 class="temp">??</h3>
+            </article>
+            <article class="otherDay">
+              <h3 class="date">??/??</h3>
+              <h3 class="time">????</h3>
+              <img class="icon" src="./assets/imgs/cloud.svg" alt="" />
+              <h3 class="temp">??</h3>
+            </article>
+          </section>
+          <section class="sectionDirectionAir">
+            <article class="directionAir">
+              <h3>??/??</h3>
+              <h3>????</h3>
+              <img src="./assets/imgs/direction.svg" alt="" />
+              <h3>?????</h3>
+            </article>
+            <article class="directionAir">
+              <h3>??/??</h3>
+              <h3>????</h3>
+              <img src="./assets/imgs/direction.svg" alt="" />
+              <h3>?????</h3>
+            </article>
+            <article class="directionAir">
+              <h3>??/??</h3>
+              <h3>????</h3>
+              <img src="./assets/imgs/direction.svg" alt="" />
+              <h3>?????</h3>
+            </article>
+            <article class="directionAir">
+              <h3>??/??</h3>
+              <h3>????</h3>
+              <img src="./assets/imgs/direction.svg" alt="" />
+              <h3>?????</h3>
+            </article>
+            <article class="directionAir">
+              <h3>??/??</h3>
+              <h3>????</h3>
+              <img src="./assets/imgs/direction.svg" alt="" />
+              <h3>?????</h3>
+            </article>
+            <article class="directionAir">
+              <h3>??/??</h3>
+              <h3>????</h3>
+              <img src="./assets/imgs/direction.svg" alt="" />
+              <h3>?????</h3>
+            </article>
+            <article class="directionAir">
+              <h3>??/??</h3>
+              <h3>????</h3>
+              <img src="./assets/imgs/direction.svg" alt="" />
+              <h3>?????</h3>
+            </article>
+            <article class="directionAir">
+              <h3>??/??</h3>
+              <h3>????</h3>
+              <img src="./assets/imgs/direction.svg" alt="" />
+              <h3>?????</h3>
+            </article>
+          </section>
+        </section>
+      </main>
+      <footer>
+        <a
+          target="_blank"
+          href="https://github.com/kevinfreitasv80/weather-app/"
+          >Link of Github</a
+        >
+      </footer>
+    </div>
+  </body>
+</html>
