@@ -40,22 +40,22 @@ const types = {
 // Events
 // Keypress
 celsius.addEventListener("keypress", function (e) {
-  e.key === "Enter" || e.code === "Space" ? changeType(e) : null;
+  e.key === "Enter" ? changeType(e) : null;
 });
 fahrenheit.addEventListener("keypress", function (e) {
-  e.key === "Enter" || e.code === "Space" ? changeType(e) : null;
+  e.key === "Enter" ? changeType(e) : null;
 });
 currentLocation.addEventListener("keypress", (e) => {
-  e.key === "Enter" || e.code === "Space" ? getPermissionGeolocation : null;
+  e.key === "Enter" ? getPermissionGeolocation : null;
 });
 input.addEventListener("keypress", (e) =>
-  e.key === "Enter" || e.code === "Space" ? getPossiblesLocations() : null
+  e.key === "Enter" ? getPossiblesLocations() : null
 );
 search.addEventListener("keypress", (e) =>
-  e.key === "Enter" || e.code === "Space" ? getPossiblesLocations() : null
+  e.key === "Enter" ? getPossiblesLocations() : null
 );
 btnIntroduction.addEventListener("keypress", (e) => {
-  e.key === "Enter" || e.code === "Space" ? hiddenIntroduction : null;
+  e.key === "Enter" ? hiddenIntroduction : null;
 });
 // Click
 celsius.addEventListener("click", function (e) {
