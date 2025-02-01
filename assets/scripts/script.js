@@ -169,8 +169,6 @@ async function requestWeatherAPI(lat, lon) {
         hiddenLoading();
       });
 
-    console.log(data);
-
     if (data) {
       const skills = {
         day: data.weather.date,
@@ -191,7 +189,7 @@ async function requestWeatherAPI(lat, lon) {
         temperature: data.weather.temperature,
         typeWeather: data.weather.typeWeather,
         itemsForecast: data.forecast.listWeather,
-        locationAndCountry: `${data.weather.localName}, ${data.weather.countryName}`,
+        locationAndCountry: [data.weather.localName, data.weather.countryName],
       };
 
       setSuns(sunrise, data.weather.sunrise);
@@ -525,6 +523,12 @@ function setSomeData(type, content) {
 
       case "iconWeather":
         iconWeather.src = getIconWeather(content) || iconWeather.src;
+        break;
+
+      case "locationAndCountry":
+        let local = content[0],
+          country = content[1];
+        locationAndCountry.textContent = `${local}, ${country}`;
         break;
 
       default:
